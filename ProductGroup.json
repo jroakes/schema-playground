@@ -1,0 +1,131 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.example.com/#/schema/organization/abc123",
+            "name": "Example Organization",
+            "url": "https://www.example.com/"
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.example.com/#website",
+            "url": "https://www.example.com/",
+            "name": "Example Website Name",
+            "description": "Example Website Description",
+            "publisher": {
+                "@id": "https://www.example.com/#/schema/organization/abc123"
+            }
+        },
+        {
+            "@type": "ItemPage",
+            "@id": "https://www.example.com/products/example-product/",
+            "url": "https://www.example.com/products/example-product/",
+            "inLanguage": "en-US",
+            "name": "Example Product Page",
+            "isPartOf": {
+                "@id": "https://www.example.com/#website"
+            },
+            "mainEntity": [
+                {
+                    "@id": "https://www.example.com/#/schema/product-group/#abc123"
+                }
+            ],
+            "datePublished": "2019-08-28T02:23:36+00:00",
+            "dateModified": "2019-11-22T12:21:10+00:00",
+            "description": "An example product page"
+        },
+        {
+            "@type": "ProductGroup",
+            "@id": "https://www.example.com/#/schema/product-group/#abc123",
+            "gtin8": 12345678,
+            "name": "Product Group",
+            "url": "https://www.example.com/products/example-product/",
+            "description": "Product Group description",
+            "brand": {
+                "@id": "https://www.example.com/#/schema/organization/abc123"
+            },
+            "aggregateRating": {
+                "@id": "https://www.example.com/#/schema/aggregaterating/abc123"
+            },
+            "image": {
+                "@id": "https://www.example.com/#/schema/image/abc123"
+            },
+            "hasVariant": [
+                { "@id": "https://www.example.com/products/example-product/#abc123" },
+                { "@id": "https://www.example.com/products/example-product/#def456" }
+            ]
+        },
+        {
+            "@type": "ProductModel",
+            "@id": "https://www.example.com/products/example-product/#abc123",
+            "gtin8": 12345678,
+            "name": "Example Product 1",
+            "color": "red",
+            "url": "https://www.example.com/products/example-product-2/",
+            "description": "Example Product description",
+            "sku": "def456",
+            "brand": {
+                "@id": "https://www.example.com/#/schema/organization/abc123"
+            },
+            "image": {
+                "@id": "https://www.example.com/#/schema/image/abc123"
+            },
+            "offers": {
+                "@type": "Offer",
+                "@id" : "https://www.example.com/#/schema/offer/#abc123",
+                "name": "Example Product [BLUE - LARGE]",
+                "price": 200,
+                "sku": "abc123",
+                "url": "https://www.example.com/products/example-product/?color=BLUE&size=LARGE"
+            }
+        },
+        {
+            "@type": "ProductModel",
+            "@id": "https://www.example.com/products/example-product/#def456",
+            "gtin8": 23456789,
+            "name": "Example Product 2",
+            "color": "blue",
+            "url": "https://www.example.com/products/example-product-2/",
+            "description": "Example Product description",
+            "sku": "def456",
+            "brand": {
+                "@id": "https://www.example.com/#/schema/organization/abc123"
+            },
+            "image": {
+                "@id": "https://www.example.com/#/schema/image/def456"
+            },
+            "offers": {
+                "@type": "Offer",
+                "@id" : "https://www.example.com/#/schema/offer/#def456",
+                "name": "Example Product [RED - SMALL]",
+                "price": 200,
+                "sku": "ghi789",
+                "url": "https://www.example.com/products/example-product/?color=RED&size=SMALL"
+            }
+        },
+        {
+            "@type": "AggregateRating",
+            "@id": "https://www.example.com/#/schema/aggregaterating/abc123",
+            "ratingValue": "3",
+            "bestRating": "5",
+            "ratingCount": "3"
+        },
+        {
+            "@type": "ImageObject",
+            "@id": "https://www.example.com/#/schema/image/abc123",
+            "url": "https://www.example.com/uploads/example-image.jpg",
+            "width": 250,
+            "height": 250,
+            "caption": "Example caption"
+        },
+        {
+            "@type": "ImageObject",
+            "@id": "https://www.example.com/#/schema/image/def456",
+            "url": "https://www.example.com/uploads/example-image.jpg",
+            "width": 250,
+            "height": 250,
+            "caption": "Example caption"
+        }
+    ]
+}
